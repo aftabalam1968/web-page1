@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baha'i Office of Public Affairs, Bangladesh</title>
+
+    <!-- 🔒 Security Meta Tags for Client-Side Protection -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <style>
+        :root {
+            /* Palette Colors */
+            --primary: #0F5257;        
+            --primary-light: #186A70;  
+            --accent: #D9381E;         
+            --accent-light: #E0533C;   
+            --text-dark: #2d3748;      
+            --text-muted: #4a5568;    
+            --bg-light: #f8f9fa;      
+            --bg-card: #ffffff;       
+            --border-color: #e2e8f0;  
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+           line-height: 1.6;
+           color: var(--text-dark);
+           background-color: var(--bg-light);
+           overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation Styling */
+        header {
+            background-color: var(--primary);
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        header .container {
+            max-width: 100%;       
+            padding: 0 15px;       
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            width: 100%;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        /* 🔴 Clear & Round Logo with 1 in Height and Width */
+        .brand-logo-img {
+            height: 1in;            /* 1 inch height */
+            width: 1in;             /* Balanced 1 inch width for perfect circle */
+            object-fit: cover;
+            border-radius: 50%;      /* Fully round shape */
+            background-color: #ffffff;
+            padding: 2px;
+            border: 3px solid var(--accent);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        .site-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.25;
+            white-space: normal;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 10px; 
+            align-items: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--accent-light);
+        }
+
+        nav ul li.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        nav ul .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary);
+            min-width: 230px;
+            box-shadow: var(--shadow-md);
+            border-radius: 0 0 6px 6px;
+            padding: 8px 0;
+            z-index: 1001;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        nav ul .dropdown-content li {
+            width: 100%;
+        }
+
+        nav ul .dropdown-content a {
+            display: block;
+            padding: 10px 16px;
+            color: #ffffff;
+            border-radius: 0;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* Desktop Dropdown Hover */
+        @media (min-width: 951px) {
+            nav ul li.dropdown:hover .dropdown-content {
+                display: flex;
+            }
+        }
+
+        nav ul .dropdown-content a:hover {
+            background-color: var(--primary-light);
+            color: var(--accent-light);
+        }
+
+        /* 📱 Mobile Menu Toggle Button (Hamburger) */
+        .mobile-menu-toggle {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 4px 12px;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--accent);
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        main section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        main section:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Flat-bottomed Elegant Ornamental Divider above Paragraphs */
+        .para-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto 25px;
+            max-width: 450px;
+            gap: 15px;
+        }
+
+        .para-divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to var(--direction, right), transparent, #c5a059);
+        }
+
+        .para-divider-line.right {
+            --direction: left;
+        }
+
+        .para-divider-icon {
+            width: 45px;
+            height: 25px;
+            fill: #c5a059;
+            flex-shrink: 0;
+        }
+
+        .intro-paragraph {
+            max-width: 800px;
+            margin: 0 auto 25px;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Responsive 3-Second Automatic Image Slideshow */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 420px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            margin: 0 auto;
+        }
+
+        .slide-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .slide-img.active-slide {
+            opacity: 1;
+        }
+
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--accent);
+        }
+
+        .article-content p {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .video-grid-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .video-wrapper {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .gallery-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+        }
+
+        .gallery-caption {
+            padding: 15px 20px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            background-color: #ffffff;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Image Lightbox Modal Styles */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            text-align: center;
+            color: #ffffff;
+            padding: 15px 0;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: var(--accent-light);
+        }
+
+        /* PDF Viewer Modal Styles */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            z-index: 2100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+        }
+
+        .pdf-modal-container {
+            position: relative;
+            margin: 2% auto;
+            width: 92%;
+            max-width: 1000px;
+            height: 90vh;
+            background-color: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        }
+
+        .pdf-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .pdf-modal-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 60%;
+        }
+
+        .pdf-modal-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pdf-download-top-btn {
+            background-color: var(--accent);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pdf-download-top-btn:hover {
+            background-color: var(--accent-light);
+        }
+
+        .pdf-modal-close {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            transition: var(--transition);
+        }
+
+        .pdf-modal-close:hover {
+            color: var(--accent-light);
+        }
+
+        .pdf-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .news-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: var(--accent-light);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .news-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-pdf {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-pdf:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        /* Custom Library Section Styling */
+        .library-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary);
+        }
+
+        .library-numbered-list {
+            list-style-type: decimal;
+            padding-left: 25px;
+        }
+
+        .library-numbered-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .lib-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.02rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .lib-link:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Contact Section Styling */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-info {
+            background-color: var(--primary);
+            color: white;
+            padding: 35px 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-info h3 {
+            color: var(--accent-light);
+            margin-bottom: 20px;
+            font-size: 1.35rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15, 82, 87, 0.1);
+        }
+
+        .btn-submit {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        footer {
+            background-color: #0A3A3E;
+            color: #a0aec0;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* 📱 Mobile Navigation Styling (Width <= 950px) */
+        @media (max-width: 950px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 15px;
+                background-color: var(--primary);
+                padding: 10px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            nav.mobile-active {
+                display: block;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 6px;
+                width: 100%;
+                align-items: stretch;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 12px 16px;
+                font-size: 1rem;
+                white-space: normal;
+                background-color: rgba(255, 255, 255, 0.05);
+                border-radius: 6px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            nav ul li.dropdown {
+                display: block;
+                width: 100%;
+            }
+
+            nav ul li.dropdown .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                padding-left: 15px;
+                margin-top: 4px;
+                background-color: var(--primary-light);
+                border-radius: 6px;
+                width: 100%;
+            }
+
+            /* Expanded Sub-dropdown in Mobile */
+            nav ul li.dropdown.mobile-expanded .dropdown-content {
+                display: flex !important;
+            }
+
+            nav ul li.dropdown .dropdown-content a {
+                padding: 10px 14px;
+                font-size: 0.92rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .site-title {
+                font-size: 0.98rem;
+            }
+
+            .brand-logo-img {
+                height: 0.7in;
+                width: 0.7in;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            main section {
+                padding: 35px 0;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .slideshow-container {
+                height: 240px;
+            }
+
+            .article-content, .library-container, .contact-info, .contact-form {
+                padding: 20px 12px;
+            }
+
+            .library-numbered-list {
+                padding-left: 18px;
+            }
+
+            .lib-link {
+                font-size: 0.92rem;
+                word-break: break-word;
+            }
+
+            .pdf-modal-container {
+                width: 96%;
+                height: 94vh;
+                margin: 3% auto;
+            }
+
+            .pdf-modal-header {
+                padding: 10px 12px;
+            }
+
+            .pdf-modal-title {
+                font-size: 0.82rem;
+                max-width: 40%;
+            }
+
+            .pdf-download-top-btn {
+                padding: 5px 10px;
+                font-size: 0.78rem;
+            }
+
+            .lightbox-close {
+                top: 15px;
+                right: 20px;
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <a href="#home" class="brand-container nav-btn">
+                <!-- 🔴 Clear & Round Logo with 1 in Height and Width -->
+                <img src="bopabd-logo.jpg" alt="Baha'i Office Logo" class="brand-logo-img">
+                <h1 class="site-title">Baha'i Office of Public Affairs,<br>Bangladesh</h1>
+            </a>
+
+            <!-- 📱 Mobile Hamburger Button -->
+            <button class="mobile-menu-toggle" aria-label="Toggle Mobile Navigation">☰</button>
+
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a id="nav-home" href="#home" class="nav-btn">Home</a></li>
+                    <li><a id="nav-history" href="#history" class="nav-btn">History</a></li>
+                    <li><a id="nav-approach" href="#approach" class="nav-btn">Approach</a></li>
+                    <li><a id="nav-news" href="#news" class="nav-btn">News</a></li>
+                    <li><a id="nav-library" href="#library" class="nav-btn">Library</a></li>
+                    
+                    <!-- 🟢 Sub-dropdown 1: Focus Areas -->
+                    <li class="dropdown">
+                        <a id="nav-focus" href="#youth-empowerment" class="nav-btn dropdown-toggle">Focus Areas ▾</a>
+                        <ul class="dropdown-content">
+                            <li><a id="nav-youth" href="#youth-empowerment" class="nav-btn">Youth Empowerment</a></li>
+                            <li><a id="nav-women" href="#women-empowerment" class="nav-btn">Women Empowerment</a></li>
+                            <li><a id="nav-children" href="#children-education" class="nav-btn">Children Education</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 🟢 Sub-dropdown 2: Video Gallery -->
+                    <li class="dropdown">
+                        <a id="nav-video" href="#video" class="dropdown-toggle">Video Gallery ▾</a>
+                        <ul class="dropdown-content">
+                            <li><a href="https://www.youtube.com/watch?v=r74AJuVyaFE" target="_blank" rel="noopener noreferrer">Impact of Social Media on Our Lives</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=hGBAK5NNGKo" target="_blank" rel="noopener noreferrer">Gender Discrimination</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=LBbj91fQce0" target="_blank" rel="noopener noreferrer">Non Sectarian Moral Education of Children</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=66e2Smi04O0" target="_blank" rel="noopener noreferrer">Building A New World My Contribution Part 1</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=ia4r8jkHaV8" target="_blank" rel="noopener noreferrer">Building A New World My Contribution Part 2</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=9aBvDOSOOYI" target="_blank" rel="noopener noreferrer">Building A New World My Contribution Part 3</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a id="nav-photo" href="#photo" class="nav-btn">Photo Gallery</a></li>
+
+                    <!-- 🌐 Language Dropdown -->
+                    <li class="dropdown">
+                        <a id="nav-lang" href="javascript:void(0)" class="dropdown-toggle">Language ▾</a>
+                        <ul class="dropdown-content">
+                            <li><a id="lang-en" href="javascript:void(0)">English</a></li>
+                            <li><a id="lang-bn" href="javascript:void(0)">Bangla</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a id="nav-contact" href="#contact" class="nav-btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="page-section active" style="padding: 30px 0; background-color: #ffffff;">
+            <div class="container">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <!-- 9-Image Automatic Slideshow Container -->
+                        <div class="slideshow-container" id="home-slideshow">
+                            <img src="image/1.png" class="slide-img active-slide" alt="Baha'i Community Bangladesh 1">
+                            <img src="image/2.png" class="slide-img" alt="Baha'i Community Bangladesh 2">
+                            <img src="image/3.png" class="slide-img" alt="Baha'i Community Bangladesh 3">
+                            <img src="image/4.png" class="slide-img" alt="Baha'i Community Bangladesh 4">
+                            <img src="image/5.png" class="slide-img" alt="Baha'i Community Bangladesh 5">
+                            <img src="image/6.png" class="slide-img" alt="Baha'i Community Bangladesh 6">
+                            <img src="image/7.png" class="slide-img" alt="Baha'i Community Bangladesh 7">
+                            <img src="image/8.png" class="slide-img" alt="Baha'i Community Bangladesh 8">
+                            <img src="image/9.png" class="slide-img" alt="Baha'i Community Bangladesh 9">
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 280px;">
+                        <h2 id="home-heading" style="font-size: 1.6rem; color: var(--primary); line-height: 1.4; font-weight: 700; margin-bottom: 20px;">
+                            We represent the Bangladesh Baha'i Community in its relations with government, the media and civil society.
+                        </h2>
+                        <h3 id="home-subheading" style="font-size: 1.2rem; color: var(--primary-light); line-height: 1.4; font-weight: 500;">
+                            “In every country or government where any of this community reside, they must behave toward that government with faithfulness, trustfulness, and truthfulness.” – Baha’u’llah
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Side-by-side Video Section -->
+                <div class="video-grid-container">
+                    <div class="video-wrapper">
+                        <figure>
+                            <video controls preload="metadata">
+                                <source src="v_clip/clip1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption id="v1-cap" style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">
+                                My home windows outside
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="video-wrapper">
+                        <figure>
+                            <video controls preload="metadata">
+                                <source src="v_clip/clip2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption id="v2-cap" style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">
+                                My home varanda outside
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- 🟢 Ornamental Flat-Bottom Divider placed BEFORE 1st Paragraph -->
+                <div class="para-divider">
+                    <div class="para-divider-line"></div>
+                    <svg class="para-divider-icon" viewBox="0 0 100 50">
+                        <path d="M 0 50 C 20 20, 30 0, 50 0 C 70 0, 80 20, 100 50 L 85 50 C 70 30, 60 15, 50 15 C 40 15, 30 30, 15 50 Z" />
+                        <circle cx="50" cy="30" r="5" />
+                    </svg>
+                    <div class="para-divider-line right"></div>
+                </div>
+
+                <div>
+                    <!-- Paragraph 1 -->
+                    <p id="home-para1" class="intro-paragraph">
+                        As part of its efforts to contribute to social transformation, the Bahá’ís of Bangladesh participate in public discourses related to the betterment of society. Working shoulder to shoulder with various groups and organizations, the community strives to contribute to the advancement of thought in areas such as the equality of women and men, the role of religion in advancing the common good, media and social cohesion, peace, good governance, well-being of families and development.
+                    </p>
+
+                    <!-- 🟢 Ornamental Flat-Bottom Divider placed ABOVE 2nd Paragraph -->
+                    <div class="para-divider">
+                        <div class="para-divider-line"></div>
+                        <svg class="para-divider-icon" viewBox="0 0 100 50">
+                            <path d="M 0 50 C 20 20, 30 0, 50 0 C 70 0, 80 20, 100 50 L 85 50 C 70 30, 60 15, 50 15 C 40 15, 30 30, 15 50 Z" />
+                            <circle cx="50" cy="30" r="5" />
+                        </svg>
+                        <div class="para-divider-line right"></div>
+                    </div>
+
+                    <!-- Paragraph 2 -->
+                    <p id="home-para2" class="intro-paragraph">
+                        The Office of Public Affairs - an agency of the National Spiritual Assembly of the Bahá’ís of Bangladesh, the official governing body of the Bahá’ís of Bangladesh - collaborates with other social actors in finding unifying and constructive approaches to advancing thought in a range of areas vital to social progress.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Us Information within Home Page -->
+            <div class="container" style="margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color);">
+                <div class="section-header">
+                    <h2 id="contact-home-heading">Contact Us</h2>
+                </div>
+                <p id="contact-home-intro" class="intro-paragraph">
+                    We welcome inquiries, opportunities for collaboration, and dialogues with civil society representatives, media, and academic institutions in Bangladesh.
+                </p>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3 id="contact-details-heading">Office Details</h3>
+                        <p><strong id="contact-office-title">Baha'i Office of Public Affairs, Bangladesh</strong></p>
+                        <p id="contact-address">National Baha'i Center, 7 Nawratan Colony, Circuit House Road, Shantinagar, Dhaka, Bangladesh</p>
+                        <p id="contact-cell">Cell Number : 00000-000007</p>
+                        <p><strong id="contact-email-label">Email:</strong> <span id="contact-email-val">alam_aftab@myself.com</span></p>
+                        <p><strong id="contact-hours-label">Office Hours:</strong> <span id="contact-hours-val">Saturday – Thursday, 11:00 AM – 3:00 PM</span></p>
+                    </div>
+
+                    <div class="contact-form">
+                        <form action="https://formspree.io/f/mwlevedz" method="POST">
+                            <div class="form-group">
+                                <label id="label-home-name" for="home-name">Full Name</label>
+                                <input type="text" id="home-name" name="name" required placeholder="Your Full Name">
+                            </div>
+                            <div class="form-group">
+                                <label id="label-home-email" for="home-email">Email Address</label>
+                                <input type="email" id="home-email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label id="label-home-subject" for="home-subject">Subject</label>
+                                <input type="text" id="home-subject" name="subject" required placeholder="Subject of inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label id="label-home-message" for="home-message">Message</label>
+                                <textarea id="home-message" name="message" rows="4" required placeholder="Write your message here..."></textarea>
+                            </div>
+                            <button id="btn-home-submit" type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Focus Areas Subsections -->
+        <section id="youth-empowerment" class="page-section">
+            <div class="container">
+                <div class="article-content">
+                    <h3 id="youth-title" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 20px;">Empowering Youth as Agents of Positive Social Change</h3>
+                    <div id="youth-body">
+                        <p>
+                            Youth represent a vibrant force for positive transformation and moral leadership within their local communities across Bangladesh. Our Youth Empowerment programs focus on enhancing their capacity to analyze social dynamics, articulate constructive solutions, and organize community service projects.
+                        </p>
+                        <p>
+                            Through structured peer mentoring, spiritual discourse, and social action, young people refine their intellectual capacities and develop a deep commitment to the welfare of others. Participating youth emerge as active agents of positive change, leading local educational initiatives and fostering unity within their neighborhoods.
+                        </p>
+                        <p>
+                            By engaging youth in meaningful dialogue and decision-making processes, we nurture a generation capable of serving their communities with integrity, dedication, and selfless devotion.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="women-empowerment" class="page-section">
+            <div class="container">
+                <div class="article-content">
+                    <h3 id="women-title" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 20px;">Promoting Gender Equality and Spiritual Advancement</h3>
+                    <div id="women-body">
+                        <p>
+                            The full equality of women and men is an essential prerequisite for a just and peaceful society in Bangladesh. Our initiatives foster spaces for open dialogue, education, and social action that highlight the vital role of women in economic, cultural, and spiritual life.
+                        </p>
+                        <p>
+                            We collaborate with grassroots institutions, educators, and civil society partners to eliminate traditional barriers restricting female leadership. By supporting educational access and economic self-reliance, we work toward a future where women and men contribute as equal partners in all spheres of human endeavor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="children-education" class="page-section">
+            <div class="container">
+                <div class="article-content">
+                    <h3 id="children-title" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 20px;">Nurturing Moral and Intellectual Capacities in Children</h3>
+                    <div id="children-body">
+                        <p>
+                            Children possess the potential to become the bright lamps of future society when provided with holistic guidance and moral education. Our educational framework integrates character development with fundamental intellectual skills to help children cultivate virtues such as truthful practice, kindness, and cooperation.
+                        </p>
+                        <p>
+                            By engaging families and community volunteers, we establish local learning environments where every child feels valued, safe, and inspired. These endeavors nurture moral clarity, mutual respect, and social responsibility from an early age, establishing a firm foundation for harmonious communities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section (Read Only Viewer Configured) -->
+        <section id="news" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="news-sec-heading">Latest News</h2>
+                </div>
+                <div class="news-grid">
+                    <!-- News 1 -->
+                    <article class="news-card">
+                        <div>
+                            <h3 id="n1-title">বাংলাদেশের বাহা'ই সম্প্রদায়ের সামনে একাডেমিক অঙ্গনে এক নতুন দিগন্ত উন্মোচিত হলো</h3>
+                            <p id="n1-date" class="news-date">৫ আগস্ট ২০২৬ | জাতীয় বাহা'ই কেন্দ্র, ঢাকা</p>
+                            <p id="n1-desc">
+                                বাহা'ই পাবলিক অ্যাফেয়ার্স অফিসের একাডেমিক মহলের সাথে অর্থবহ আলাপচারিতার অংশ হিসেবে ঢাকা বিশ্ববিদ্যালয়ের শিক্ষার্থীরা বাহা'ই কেন্দ্র পরিদর্শন ও পরিচিতিমূলক সেশনে অংশগ্রহণ করেন।
+                            </p>
+                        </div>
+                        <a href="news/1.pdf" class="btn-pdf news-read-btn">
+                            📖 Read News
+                        </a>
+                    </article>
+
+                    <!-- News 2 -->
+                    <article class="news-card">
+                        <div>
+                            <h3 id="n2-title">মানুষকে ভেদাভেদ সিনড্রোম থেকে বেরিয়ে আসার আহ্বান</h3>
+                            <p id="n2-date" class="news-date">২১ জুন ২০২৫ | জাতীয় দৈনিক বাংলার আলো</p>
+                            <p id="n2-desc">
+                                বিশ্বময় সমস্যা সমাধানের জন্য অ-বৈষম্যমূলক উপায়ে দ্বন্দ্ব নিরসনে সুশীল সমাজ ও শিক্ষাবিদদের উপস্থিতিতে বাহাই কেন্দ্রে বিশেষ আলোচনা অনুষ্ঠিত হয়।
+                            </p>
+                        </div>
+                        <a href="news/2.pdf" class="btn-pdf news-read-btn">
+                            📖 Read News
+                        </a>
+                    </article>
+
+                    <!-- News 3 -->
+                    <article class="news-card">
+                        <div>
+                            <h3 id="n3-title">Baha'i Community's Relationship with Academia: Dhaka University Visit</h3>
+                            <p id="n3-date" class="news-date">4 March 2026 | University of Dhaka</p>
+                            <p id="n3-desc">
+                                Delegation from Baha'i Office of Public Affairs visited World Religions & Culture and Peace & Conflict Studies Departments to strengthen academic ties।
+                            </p>
+                        </div>
+                        <a href="news/3.pdf" class="btn-pdf news-read-btn">
+                            📖 Read News
+                        </a>
+                    </article>
+
+                    <!-- News 4 -->
+                    <article class="news-card">
+                        <div>
+                            <h3 id="n4-title">Greater Recognition of Fathers' Role in Children's Education</h3>
+                            <p id="n4-date" class="news-date">27 June 2026 | National Baha'i Centre, Dhaka</p>
+                            <p id="n4-desc">
+                                Roundtable discussion exploring the vital role fathers play in child development, spiritual education, and moral upbringing।
+                            </p>
+                        </div>
+                        <a href="news/4.pdf" class="btn-pdf news-read-btn">
+                            📖 Read News
+                        </a>
+                    </article>
+
+                    <!-- News 5 -->
+                    <article class="news-card">
+                        <div>
+                            <h3 id="n5-title">Orientation Session for Baha'i Youth in Dhaka</h3>
+                            <p id="n5-date" class="news-date">17 July 2026 | National Baha'i Center, Dhaka</p>
+                            <p id="n5-desc">
+                                Intensive program organized for youth to discuss evolving social dynamics in the digital age and constructive approaches to community service।
+                            </p>
+                        </div>
+                        <a href="news/5.pdf" class="btn-pdf news-read-btn">
+                            📖 Read News
+                        </a>
+                    </article>
+
+                    <!-- News 6 -->
+                    <article class="news-card">
+                        <div>
+                            <h3 id="n6-title">নৈতিক মূল্যবোধের শিক্ষা বাড়ি থেকে শুরু হতে হবে</h3>
+                            <p id="n6-date" class="news-date">২৩ নভেম্বর ২০২৫ | জাতীয় সাপ্তাহিক যুবকণ্ঠ (বর্ষ-৩২)</p>
+                            <p id="n6-desc">
+                                অসাম্প্রদায়িক নৈতিক শিক্ষা বিষয়ক গোলটেবিল আলোচনায় সমাজ ও পরিবারে নৈতিক শিক্ষার ভূমিকা নিয়ে বিশেষজ্ঞদের মতামত প্রকাশ।
+                            </p>
+                        </div>
+                        <a href="news/6.pdf" class="btn-pdf news-read-btn">
+                            📖 Read News
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Library Section (Numbered 1 to 15) -->
+        <section id="library" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="library-sec-heading">Library</h2>
+                </div>
+                <div class="library-container">
+                    <ol class="library-numbered-list">
+                        <li><a href="library/Religion.pdf" class="lib-link">The Divine Educators and the Nature and Purpose of Religion - ঐশ্বরিক শিক্ষাবিদ এবং ধর্মের প্রকৃতি এবং উদ্দেশ্য</a></li>
+                        <li><a href="library/Developing an Official National  Online Presence.pdf" class="lib-link">Developing an Official National  Online Presence - একটি অফিসিয়াল জাতীয় অনলাইন উপস্থিতি বিকাশ করা</a></li>
+                        <li><a href="library/doc3.pdf" class="lib-link">Drawing on the Power of Faith in Building a United Society - একটি অবিচ্ছিন্ন সমাজ নির্মাণে বিশ্বাসের শক্তির উপর অঙ্কন</a></li>
+                        <li><a href="library/Digital Inclusion and the Advancement of Women Wielding a Double-Edged Sword.pdf" class="lib-link">Digital Inclusion and the Advancement of Women: Wielding a Double-Edged Sword - সংখ্যাগত অন্তর্ভুক্তি এবং মহিলাদের অগ্রগতি: একটি দ্বি-ধারী তলোয়ার চালনা</a></li>
+                        <li><a href="library/doc5.pdf" class="lib-link">Religion, Peace, and the End of Otherness</a></li>
+                        <li><a href="library/doc6.pdf" class="lib-link">Treasuring Diversity: The Role of Religion in Building an Inclusive Society</a></li>
+                        <li><a href="library/doc7.pdf" class="lib-link">Religion and Peace: Making Transformation Possible</a></li>
+                        <li><a href="library/doc8.pdf" class="lib-link">Places of Worship – Their Evolving Nature and Purpose</a></li>
+                        <li><a href="library/doc9.pdf" class="lib-link">Promoting Peaceful Coexistence in Bangladesh</a></li>
+                        <li><a href="library/doc10.pdf" class="lib-link">Framework for Youth Moral Leadership and Social Action</a></li>
+                        <li><a href="library/doc11.pdf" class="lib-link">Moral and Character Education for Children</a></li>
+                        <li><a href="library/doc12.pdf" class="lib-link">The Role of Media in Fostering Social Cohesion</a></li>
+                        <li><a href="library/doc13.pdf" class="lib-link">Consultation as a Method for Conflict Resolution</a></li>
+                        <li><a href="library/doc14.pdf" class="lib-link">Spiritual Insights for Sustainable Development</a></li>
+                        <li><a href="library/doc15.pdf" class="lib-link">Selected Baha'i Writings on Universal Peace</a></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="photo" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Photo Gallery</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="pe/1.jpeg" alt="National Event Discussion 1">
+                        <div id="p1-cap" class="gallery-caption">National Consultative Roundtable Session</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="pe/RFP-DU1.jpeg" alt="Religion For Peace - Dhaka University">
+                        <div id="p2-cap" class="gallery-caption">Religions For Peace - Dhaka University</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="pe/RFP-DU2.jpeg" alt="Religion For Peace - Dhaka University-2">
+                        <div id="p3-cap" class="gallery-caption">Religions For Peace - Dhaka University</div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="pe/RFP-DU3.jpeg" alt="Religion For Peace - Dhaka University-3">
+                        <div id="p4-cap" class="gallery-caption">Religions For Peace - Dhaka University</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="pe/RFP-DU4.jpeg" alt="Religion For Peace - Dhaka University-4">
+                        <div id="p5-cap" class="gallery-caption">Religions For Peace - Dhaka University</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="pe/RFP-DU5.jpeg" alt="Religion For Peace - Dhaka University-5">
+                        <div id="p6-cap" class="gallery-caption">Religions For Peace - Dhaka University</div>
+                    </div>
+
+		            <div class="gallery-card">
+                        <img src="pe/RFP-DU6.jpeg" alt="Religion For Peace - Dhaka University-6">
+                        <div id="p7-cap" class="gallery-caption">Religions For Peace - Dhaka University</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="pe/Image4.jpeg" alt="National Event Discussion 2">
+                        <div id="p8-cap" class="gallery-caption">Note Taking from Round Table</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="pe/Image6.jpeg" alt="National Event Discussion 3">
+                        <div id="p9-cap" class="gallery-caption">Note Taking from Round Table</div>
+                    </div>
+		            <div class="gallery-card">
+                        <img src="pe/DUSTU1.jpeg" alt="National Event Discussion 1">
+                        <div id="p10-cap" class="gallery-caption">Gender Studies Student of Dhaka University</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="pe/DUSTU2.jpeg" alt="National Event Discussion 2">
+                        <div id="p11-cap" class="gallery-caption">Gender Studies Student of Dhaka University</div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="pe/DUSTU3.jpeg" alt="National Event Discussion 3">
+                        <div id="p12-cap" class="gallery-caption">Group Photo Gender Studies Student-Dhaka University</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="history" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="history-heading">History</h2>
+                </div>
+                <p id="history-text" class="intro-paragraph">
+                    The Baha'i Office of Public Affairs in Bangladesh was established to represent the Baha'i community in its relations with government agencies, civil society organizations, and academic institutions. Over the decades, our office has actively engaged in promoting peaceful coexistence, religious harmony, and gender equality across the nation. Rooted in the principle of the oneness of humanity, we continuously strive to serve as a bridge of cooperation and constructive dialogue in Bangladesh's evolving social landscape.
+                </p>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section id="approach" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="approach-heading">Approach</h2>
+                </div>
+                <p id="approach-text" class="intro-paragraph">
+                    Our approach is grounded in the conviction that meaningful social transformation requires both material and spiritual insights working in harmony. We engage in public discourses not through confrontation or political advocacy, but by offering learning-oriented frameworks that encourage unity and shared responsibility. By collaborating with diverse stakeholders across Bangladesh, we seek to identify underlying principles that generate unity of thought and collective action for the common good.
+                </p>
+            </div>
+        </section>
+
+        <!-- Dedicated Contact Us Section -->
+        <section id="contact" class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="contact-heading">Contact Us</h2>
+                </div>
+                <p id="contact-intro" class="intro-paragraph">
+                    We welcome inquiries, opportunities for collaboration, and dialogues with civil society representatives, media, and academic institutions in Bangladesh.
+                </p>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3 id="contact-sec-details">Office Details</h3>
+                        <p><strong id="contact-sec-office">Baha'i Office of Public Affairs, Bangladesh</strong></p>
+                        <p id="contact-sec-address">National Baha'i Center, 7 Nawratan Colony, Circuit House Road, Shantinagar, Dhaka, Bangladesh</p>
+                        <p id="contact-sec-cell">Cell Number : 00000-000007</p>
+                        <p><strong id="contact-sec-email-lbl">Email:</strong> <span id="contact-sec-email-val">alam_aftab@myself.com</span></p>
+                        <p><strong id="contact-sec-hours-lbl">Office Hours:</strong> <span id="contact-sec-hours-val">Saturday – Thursday, 11:00 AM – 3:00 PM</span></p>
+                    </div>
+
+                    <div class="contact-form">
+                        <form action="https://formspree.io/f/mwlevedz" method="POST">
+                            <div class="form-group">
+                                <label id="label-name" for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                            </div>
+                            <div class="form-group">
+                                <label id="label-email" for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label id="label-subject" for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Subject of inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label id="label-message" for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Write your message here..."></textarea>
+                            </div>
+                            <button id="btn-submit" type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal Container for Images -->
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged View">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- PDF Viewer Modal Container (Read-Only Mode Ready) -->
+    <div id="pdf-modal" class="pdf-modal">
+        <div class="pdf-modal-container">
+            <div class="pdf-modal-header">
+                <span id="pdf-modal-title" class="pdf-modal-title">Document Title</span>
+                <div class="pdf-modal-actions">
+                    <a id="pdf-modal-download" href="#" download class="pdf-download-top-btn">📥 Download PDF</a>
+                    <span class="pdf-modal-close">&times;</span>
+                </div>
+            </div>
+            <iframe id="pdf-modal-iframe" class="pdf-iframe" src=""></iframe>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Baha'i Office of Public Affairs, Bangladesh. All rights reserved.</p>
+            <p style="font-size: 0.8rem; color: #718096;">Promoting unity, education, and community well-being across Bangladesh.</p>
+        </div>
+    </footer>
+
+    <!-- Cleaned & Fully Functional Mobile JavaScript Block -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 🌐 Complete Language Switcher Data (Includes Home Video Captions Translation)
+            const translations = {
+                en: {
+                    // Navigation Bar
+                    navHome: "Home",
+                    navHistory: "History",
+                    navApproach: "Approach",
+                    navNews: "News",
+                    navLibrary: "Library",
+                    navFocus: "Focus Areas ▾",
+                    navYouth: "Youth Empowerment",
+                    navWomen: "Women Empowerment",
+                    navChildren: "Children Education",
+                    navVideo: "Video Gallery ▾",
+                    navPhoto: "Photo Gallery",
+                    navLang: "Language ▾",
+                    navContact: "Contact Us",
+
+                    // Home Section
+                    heading: "We represent the Bangladesh Baha'i Community in its relations with government, the media and civil society.",
+                    subheading: "“In every country or government where any of this community reside, they must behave toward that government with faithfulness, trustfulness, and truthfulness.” – Baha’u’llah",
+                    v1Cap: "My home windows outside",
+                    v2Cap: "My home varanda outside",
+                    para1: "As part of its efforts to contribute to social transformation, the Bahá’ís of Bangladesh participate in public discourses related to the betterment of society. Working shoulder to shoulder with various groups and organizations, the community strives to contribute to the advancement of thought in areas such as the equality of women and men, the role of religion in advancing the common good, media and social cohesion, peace, good governance, well-being of families and development.",
+                    para2: "The Office of Public Affairs - an agency of the National Spiritual Assembly of the Bahá’ís of Bangladesh, the official governing body of the Bahá’ís of Bangladesh - collaborates with other social actors in finding unifying and constructive approaches to advancing thought in a range of areas vital to social progress.",
+
+                    // History Section
+                    historyHeading: "History",
+                    historyText: "The Baha'i Office of Public Affairs in Bangladesh was established to represent the Baha'i community in its relations with government agencies, civil society organizations, and academic institutions. Over the decades, our office has actively engaged in promoting peaceful coexistence, religious harmony, and gender equality across the nation. Rooted in the principle of the oneness of humanity, we continuously strive to serve as a bridge of cooperation and constructive dialogue in Bangladesh's evolving social landscape.",
+
+                    // Approach Section
+                    approachHeading: "Approach",
+                    approachText: "Our approach is grounded in the conviction that meaningful social transformation requires both material and spiritual insights working in harmony. We engage in public discourses not through confrontation or political advocacy, but by offering learning-oriented frameworks that encourage unity and shared responsibility. By collaborating with diverse stakeholders across Bangladesh, we seek to identify underlying principles that generate unity of thought and collective action for the common good.",
+
+                    // Focus Areas Articles
+                    youthTitle: "Empowering Youth as Agents of Positive Social Change",
+                    youthBody: `<p>Youth represent a vibrant force for positive transformation and moral leadership within their local communities across Bangladesh. Our Youth Empowerment programs focus on enhancing their capacity to analyze social dynamics, articulate constructive solutions, and organize community service projects.</p>
+                                <p>Through structured peer mentoring, spiritual discourse, and social action, young people refine their intellectual capacities and develop a deep commitment to the welfare of others. Participating youth emerge as active agents of positive change, leading local educational initiatives and fostering unity within their neighborhoods.</p>
+                                <p>By engaging youth in meaningful dialogue and decision-making processes, we nurture a generation capable of serving their communities with integrity, dedication, and selfless devotion.</p>`,
+
+                    womenTitle: "Promoting Gender Equality and Spiritual Advancement",
+                    womenBody: `<p>The full equality of women and men is an essential prerequisite for a just and peaceful society in Bangladesh. Our initiatives foster spaces for open dialogue, education, and social action that highlight the vital role of women in economic, cultural, and spiritual life.</p>
+                                <p>We collaborate with grassroots institutions, educators, and civil society partners to eliminate traditional barriers restricting female leadership. By supporting educational access and economic self-reliance, we work toward a future where women and men contribute as equal partners in all spheres of human endeavor.</p>`,
+
+                    childrenTitle: "Nurturing Moral and Intellectual Capacities in Children",
+                    childrenBody: `<p>Children possess the potential to become the bright lamps of future society when provided with holistic guidance and moral education. Our educational framework integrates character development with fundamental intellectual skills to help children cultivate virtues such as truthful practice, kindness, and cooperation.</p>
+                                   <p>By engaging families and community volunteers, we establish local learning environments where every child feels valued, safe, and inspired. These endeavors nurture moral clarity, mutual respect, and social responsibility from an early age, establishing a firm foundation for harmonious communities.</p>`,
+
+                    // News Section Translations
+                    newsSecHeading: "Latest News",
+                    n1Title: "A New Horizon Opened for the Bangladesh Baha'i Community in Academia",
+                    n1Date: "5 August 2026 | National Baha'i Center, Dhaka",
+                    n1Desc: "As part of meaningful interactions with academia, Dhaka University students visited the Baha'i Center and participated in an orientation session.",
+
+                    n2Title: "Call for People to Overcome 'Discrimination Syndrome'",
+                    n2Date: "21 June 2025 | National Daily Banglar Alo",
+                    n2Desc: "A special discussion was held at the Baha'i Center in the presence of civil society representatives and academics to resolve conflicts non-discriminatorily.",
+
+                    n3Title: "Baha'i Community's Relationship with Academia: Dhaka University Visit",
+                    n3Date: "4 March 2026 | University of Dhaka",
+                    n3Desc: "Delegation from Baha'i Office of Public Affairs visited World Religions & Culture and Peace & Conflict Studies Departments to strengthen academic ties.",
+
+                    n4Title: "Greater Recognition of Fathers' Role in Children's Education",
+                    n4Date: "27 June 2026 | National Baha'i Centre, Dhaka",
+                    n4Desc: "Roundtable discussion exploring the vital role fathers play in child development, spiritual education, and moral upbringing.",
+
+                    n5Title: "Orientation Session for Baha'i Youth in Dhaka",
+                    n5Date: "17 July 2026 | National Baha'i Center, Dhaka",
+                    n5Desc: "Intensive program organized for youth to discuss evolving social dynamics in the digital age and constructive approaches to community service.",
+
+                    n6Title: "Moral Education Must Begin at Home",
+                    n6Date: "23 November 2025 | National Weekly Yuvakantha",
+                    n6Desc: "Experts shared views on the role of moral education in family and society during a roundtable discussion on non-sectarian moral education.",
+
+                    // Library Section Heading
+                    librarySecHeading: "Library",
+
+                    // Photo Gallery Section & Captions
+                    photoSecHeading: "Photo Gallery",
+                    p1Cap: "National Consultative Roundtable Session",
+                    p2Cap: "Religions For Peace - Dhaka University",
+                    p3Cap: "Religions For Peace - Dhaka University",
+                    p4Cap: "Religions For Peace - Dhaka University",
+                    p5Cap: "Religions For Peace - Dhaka University",
+                    p6Cap: "Religions For Peace - Dhaka University",
+                    p7Cap: "Religions For Peace - Dhaka University",
+                    p8Cap: "Note Taking from Round Table",
+                    p9Cap: "Note Taking from Round Table",
+                    p10Cap: "Gender Studies Student of Dhaka University",
+                    p11Cap: "Gender Studies Student of Dhaka University",
+                    p12Cap: "Group Photo Gender Studies Student-Dhaka University",
+
+                    // Contact Us Section Language
+                    contactHeading: "Contact Us",
+                    contactIntro: "We welcome inquiries, opportunities for collaboration, and dialogues with civil society representatives, media, and academic institutions in Bangladesh.",
+                    contactDetails: "Office Details",
+                    contactOffice: "Baha'i Office of Public Affairs, Bangladesh",
+                    contactAddress: "National Baha'i Center, 7 Nawratan Colony, Circuit House Road, Shantinagar, Dhaka, Bangladesh",
+                    contactCell: "Cell Number : 00000-000007",
+                    contactEmailLbl: "Email:",
+                    contactHoursLbl: "Office Hours:",
+                    contactHoursVal: "Saturday – Thursday, 11:00 AM – 3:00 PM",
+                    labelName: "Full Name",
+                    labelEmail: "Email Address",
+                    labelSubject: "Subject",
+                    labelMessage: "Message",
+                    btnSubmit: "Send Message",
+                    phName: "Your Full Name",
+                    phEmail: "your.email@example.com",
+                    phSubject: "Subject of inquiry",
+                    phMessage: "Write your message here..."
+                },
+                bn: {
+                    // Navigation Bar
+                    navHome: "হোম",
+                    navHistory: "ইতিহাস",
+                    navApproach: "দৃষ্টিভঙ্গি",
+                    navNews: "সংবাদ",
+                    navLibrary: "লাইব্রেরি",
+                    navFocus: "প্রধান ক্ষেত্রসমূহ ▾",
+                    navYouth: "যুব ক্ষমতায়ন",
+                    navWomen: "নারী ক্ষমতায়ন",
+                    navChildren: "শিশু শিক্ষা",
+                    navVideo: "ভিডিও গ্যালারি ▾",
+                    navPhoto: "ফটো গ্যালারি",
+                    navLang: "ভাষা ▾",
+                    navContact: "যোগাযোগ",
+
+                    // Home Section
+                    heading: "আমরা সরকার, গণমাধ্যম এবং সুশীল সমাজের সাথে সম্পর্কের ক্ষেত্রে বাংলাদেশ বাহা'ই সম্প্রদায়ের প্রতিনিধিত্ব করি।",
+                    subheading: "“যে কোনো দেশ বা সরকার যেখানেই এই সম্প্রদায়ের কোনো সদস্য বাস করেন, তাদের অবশ্যই সেই সরকারের প্রতি বিশ্বস্ততা, বিশ্বাসযোগ্যতা এবং সত্যবাদিতার সাথে আচরণ করতে হবে।” – বাহা'উ'ল্লাহ",
+                    v1Cap: "আমার বাড়ির বাইরের জানালা",
+                    v2Cap: "আমার বাড়ির বাইরের বারান্দা",
+                    para1: "সামাজিক পরিবর্তনের প্রচেষ্টার অংশ হিসেবে, বাংলাদেশের বাহা'ইগণ সমাজের উন্নতির সাথে সম্পর্কিত বিভিন্ন সার্বজনীন আলোচনা ও সংলাপে অংশগ্রহণ করেন। বিভিন্ন গোষ্ঠী ও সংগঠনের সাথে কাঁধে কাঁধ মিলিয়ে, সম্প্রদায়টি নারী-পুরুষের সমতা, সাধারণ কল্যাণে ধর্মের ভূমিকা, গণমাধ্যম ও সামাজিক সংহতি, শান্তি, সুশাসন, পরিবারের কল্যাণ এবং উন্নয়নের মতো ক্ষেত্রে চিন্তার অগ্রগতির জন্য কাজ করে চলেছে।",
+                    para2: "পাবলিক অ্যাফেয়ার্স অফিস - বাংলাদেশের বাহা'ইদের জাতীয় আধ্যাত্মিক পরিষদ (বাংলাদেশের বাহা'ইদের সরকারি পরিচালনাকারী সংস্থা)-এর একটি সংস্থা - সামাজিক অগ্রগতির জন্য গুরুত্বপূর্ণ ক্ষেত্রগুলোতে চিন্তার বিকাশে ঐক্যবদ্ধ ও গঠনমূলক পন্থা খুঁজে বের করতে অন্যান্য সামাজিক অংশীদারদের সাথে সহযোগিতা করে।",
+
+                    // History Section
+                    historyHeading: "ইতিহাস",
+                    historyText: "সরকারি সংস্থা, সুশীল সমাজ সংস্থা এবং একাডেমিক প্রতিষ্ঠানের সাথে সম্পর্কের ক্ষেত্রে বাহা'ই সম্প্রদায়ের প্রতিনিধিত্ব করার জন্য বাংলাদেশে বাহা'ই পাবলিক অ্যাফেয়ার্স অফিস প্রতিষ্ঠিত হয়েছিল। বিগত দশকগুলোতে, আমাদের অফিস সারা দেশে শান্তিপূর্ণ সহাবস্থান, ধর্মীয় সম্প্রীতি এবং লিঙ্গ সমতা প্রসারে সক্রিয়ভাবে কাজ করে যাচ্ছে। মানবজাতির ঐক্যের নীতিতে মূলীভূত হয়ে, আমরা বাংলাদেশের বিকাশমান সামাজিক বাস্তবতায় সহযোগিতা এবং গঠনমূলক সংলাপে একটি বন্ধন হিসেবে কাজ করার নিরবচ্ছিন্ন প্রচেষ্টা চালিয়ে যাচ্ছি।",
+
+                    // Approach Section
+                    approachHeading: "দৃষ্টিভঙ্গি",
+                    approachText: "আমাদের দৃষ্টিভঙ্গি এই বিশ্বাসের ওপর প্রতিষ্ঠিত যে অর্থপূর্ণ সামাজিক পরিবর্তনের জন্য বস্তুগত এবং আধ্যাত্মিক উভয় জ্ঞানের সামঞ্জস্যপূর্ণ প্রয়োগ প্রয়োজন। আমরা সংঘাত বা রাজনৈতিক জোরালো প্রচারের মাধ্যমে নয়, বরং ঐক্য ও যৌথ দায়িত্ববোধকে উৎসাহিত করে এমন শিক্ষণমুখী কাঠামোর মাধ্যমে প্রকাশ্য সংলাপে অংশগ্রহণ করি। সমগ্র বাংলাদেশের বিভিন্ন অংশীদারদের সাথে সহযোগিতার মাধ্যমে, আমরা এমন মূল নীতিগুলো চিহ্নিত করার চেষ্টা করি যা সাধারণ কল্যাণের জন্য চিন্তা ও সম্মিলিত কর্মের ঐক্য সৃষ্টি করে।",
+
+                    // Focus Areas Articles in Bangla
+                    youthTitle: "ইতিবাচক সামাজিক পরিবর্তনের বাহক হিসেবে যুবসমাজকে ক্ষমতায়িত করা",
+                    youthBody: `<p>বাংলাদেশজুড়ে স্থানীয় সম্প্রদায়গুলোর মধ্যে ইতিবাচক সামাজিক পরিবর্তন ও নৈতিক নেতৃত্বের একটি প্রাণবন্ত শক্তি হলো যুবসমাজ। আমাদের যুব ক্ষমতায়ন কার্যক্রম তাদের সামাজিক গতিশীলতা বিশ্লেষণ, গঠনমূলক সমাধান তৈরি এবং সামাজিক সেবা প্রকল্প বাস্তবায়নের সক্ষমতা বৃদ্ধির ওপর জোর দেয়।</p>
+                                <p>পরামর্শমূলক চর্চা, আধ্যাত্মিক আলোচনা ও সামাজিক উদ্যোগের মাধ্যমে তরুণরা তাদের মেধা ও চিন্তাশক্তিকে সমৃদ্ধ করে এবং অন্যের কল্যাণে নিজেদের নিবেদিত করার অঙ্গীকার গড়ে তোলে। অংশগ্রহণকারী যুবকরা ইতিবাচক পরিবর্তনের সক্রিয় চালিকাশক্তি হিসেবে আত্মপ্রকাশ করে শিক্ষা বিষয়ক উদ্যোগ পরিচালনা করে এবং নিজ নিজ এলাকায় ঐক্য সুদৃঢ় করে।</p>
+                                <p>অর্থবহ সংলাপ ও সিদ্ধান্ত গ্রহণ প্রক্রিয়ায় যুবকদের অংশগ্রহণের মাধ্যমে আমরা এমন একটি প্রজন্ম গড়ে তুলছি যারা সততা, নিষ্ঠা ও আত্মনিয়োগের মাধ্যমে তাদের সমাজের সেবা করতে সক্ষম।</p>`,
+
+                    womenTitle: "লিঙ্গ সমতা ও আধ্যাত্মিক সমৃদ্ধি ত্বরান্বিত করা",
+                    womenBody: `<p>বাংলাদেশে একটি ন্যায়ভিত্তিক ও শান্তিপূর্ণ সমাজ গঠনের অপরিহার্য পূর্বশর্ত হলো নারী ও পুরুষের পূর্ণ সমতা। আমাদের উদ্যোগসমূহ উন্মুক্ত আলোচনা, শিক্ষা ও সামাজিক কর্মকাণ্ডের এমন ক্ষেত্র তৈরি করে যা অর্থনৈতিক, সাংস্কৃতিক ও আধ্যাত্মিক জীবনে নারীদের গুরুত্বপূর্ণ ভূমিকা ফুটিয়ে তোলে।</p>
+                                <p>নারীদের নেতৃত্ব বিকাশে প্রথাগত বাধাগুলো দূর করতে আমরা তৃণমূল প্রতিষ্ঠান, শিক্ষাবিদ ও সুশীল সমাজের সহযোগীদের সাথে কাজ করি। শিক্ষার সহজলভ্যতা ও অর্থনৈতিক আত্মনির্ভরশীলতা বৃদ্ধির মাধ্যমে আমরা এমন এক ভবিষ্যতের দিকে এগিয়ে যাচ্ছি যেখানে নারী ও পুরুষ জীবনের প্রতিটি ক্ষেত্রে সমান অংশীদার হিসেবে অবদান রাখবে।</p>`,
+
+                    childrenTitle: "শিশুদের মধ্যে নৈতিক ও বুদ্ধিবৃত্তিক ক্ষমতার বিকাশ ঘটানো",
+                    childrenBody: `<p>শিশুদের যথাযথ পথপ্রদর্শন ও নৈতিক শিক্ষা দেওয়া হলে তারা সুশীল সমাজের উজ্জ্বল প্রদীপে পরিণত হতে পারে। আমাদের শিক্ষামূলক কাঠামো চরিত্রের ইতিবাচক বিকাশ ও মৌলিক বুদ্ধিবৃত্তিক দক্ষতার সমন্বয় ঘটায়, যা শিশুদের সত্যবাদিতা, দয়াশীলতা ও সহমর্মিতার মতো মানবীয় গুণাবলী অর্জনে সহায়তা করে।</p>
+                                   <p>পরিবার ও সামাজিক স্বেচ্ছাসেবীদের সাথে নিয়ে আমরা এমন শিক্ষণীয় পরিবেশ প্রতিষ্ঠা করি যেখানে প্রতিটি শিশু সুরক্ষিত ও অনুপ্রাণিত বোধ করে। এই প্রচেষ্টা কম বয়স থেকেই শিশুদের মধ্যে নৈতিক স্পষ্টতা, পারস্পরিক শ্রদ্ধা ও সামাজিক দায়িত্ববোধ গড়ে তোলে, যা একটি সৌহার্দ্যপূর্ণ সম্প্রদায়ের সুদৃঢ় ভিত্তি স্থাপন করে।</p>`,
+
+                    // News Section Translations in Bangla
+                    newsSecHeading: "সর্বশেষ সংবাদ",
+                    n1Title: "বাংলাদেশের বাহা'ই সম্প্রদায়ের সামনে একাডেমিক অঙ্গনে এক নতুন দিগন্ত উন্মোচিত হলো",
+                    n1Date: "৫ আগস্ট ২০২৬ | জাতীয় বাহা'ই কেন্দ্র, ঢাকা",
+                    n1Desc: "বাহা'ই পাবলিক অ্যাফেয়ার্স অফিসের একাডেমিক মহলের সাথে অর্থবহ আলাপচারিতার অংশ হিসেবে ঢাকা বিশ্ববিদ্যালয়ের শিক্ষার্থীরা বাহা'ই কেন্দ্র পরিদর্শন ও পরিচিতিমূলক সেশনে অংশগ্রহণ করেন।",
+
+                    n2Title: "মানুষকে ভেদাভেদ সিনড্রোম থেকে বেরিয়ে আসার আহ্বান",
+                    n2Date: "২১ জুন ২০২৫ | জাতীয় দৈনিক বাংলার আলো",
+                    n2Desc: "বিশ্বময় সমস্যা সমাধানের জন্য অ-বৈষম্যমূলক উপায়ে দ্বন্দ্ব নিরসনে সুশীল সমাজ ও শিক্ষাবিদদের উপস্থিতিতে বাহাই কেন্দ্রে বিশেষ আলোচনা অনুষ্ঠিত হয়।",
+
+                    n3Title: "একাডেমিক অঙ্গনের সাথে বাহা'ই সম্প্রদায়ের সম্পর্কের অগ্রগতি: ঢাকা বিশ্ববিদ্যালয় সফর",
+                    n3Date: "৪ মার্চ ২০২৬ | ঢাকা বিশ্ববিদ্যালয়",
+                    n3Desc: "একাডেমিক সম্পর্ক জোরদার করতে বাহা'ই পাবলিক অ্যাফেয়ার্স অফিসের একটি প্রতিনিধি দল বিশ্ব ধর্ম ও সংস্কৃতি এবং শান্তি ও সংঘর্ষ অধ্যয়ন বিভাগ পরিদর্শনে যান।",
+
+                    n4Title: "শিশুদের শিক্ষায় বাবার ভূমিকার বৃহত্তর স্বীকৃতি",
+                    n4Date: "২৭ জুন ২০২৬ | জাতীয় বাহা'ই কেন্দ্র, ঢাকা",
+                    n4Desc: "শিশু বিকাশ, আধ্যাত্মিক শিক্ষা এবং নৈতিক মূল্যবোধ গঠনে বাবার গুরুত্বপূর্ণ ভূমিকা নিয়ে একটি বিশেষ গোলটেবিল আলোচনা অনুষ্ঠিত হয়।",
+
+                    n5Title: "ঢাকার বাহা'ই তরুণদের পরিচিতিমূলক সেশন",
+                    n5Date: "১৭ জুলাই ২০২৬ | জাতীয় বাহা’ই কেন্দ্র, ঢাকা",
+                    n5Desc: "ডিজিটাল যুগে পরিবর্তনের গতিশীলতা এবং সমাজসেবায় গঠনমূলক দৃষ্টিভঙ্গি নিয়ে আলোচনা করতে তরুণদের জন্য এক বিশেষ কর্মসূচি আয়োজন করা হয়।",
+
+                    n6Title: "নৈতিক মূল্যবোধের শিক্ষা বাড়ি থেকে শুরু হতে হবে",
+                    n6Date: "২৩ নভেম্বর ২০২৫ | জাতীয় সাপ্তাহিক যুবকণ্ঠ (বর্ষ-৩২)",
+                    n6Desc: "অসাম্প্রদায়িক নৈতিক শিক্ষা বিষয়ক গোলটেবিল আলোচনায় সমাজ ও পরিবারে নৈতিক শিক্ষার ভূমিকা নিয়ে বিশেষজ্ঞদের মতামত প্রকাশ করা হয়।",
+
+                    // Library Section Heading
+                    librarySecHeading: "লাইব্রেরি",
+
+                    // Photo Gallery Captions in Bangla
+                    photoSecHeading: "ফটো গ্যালারি",
+                    p1Cap: "জাতীয় পরামর্শমূলক গোলটেবিল বৈঠক",
+                    p2Cap: "শান্তির জন্য ধর্ম - ঢাকা বিশ্ববিদ্যালয়",
+                    p3Cap: "শান্তির জন্য ধর্ম - ঢাকা বিশ্ববিদ্যালয়",
+                    p4Cap: "শান্তির জন্য ধর্ম - ঢাকা বিশ্ববিদ্যালয়",
+                    p5Cap: "শান্তির জন্য ধর্ম - ঢাকা বিশ্ববিদ্যালয়",
+                    p6Cap: "শান্তির জন্য ধর্ম - ঢাকা বিশ্ববিদ্যালয়",
+                    p7Cap: "শান্তির জন্য ধর্ম - ঢাকা বিশ্ববিদ্যালয়",
+                    p8Cap: "গোল টেবিল থেকে নোট নেওয়া",
+                    p9Cap: "গোল টেবিল থেকে নোট নেওয়া",
+                    p10Cap: "ঢাকা বিশ্ববিদ্যালয়ের জেন্ডার স্টাডিজের ছাত্রী",
+                    p11Cap: "ঢাকা বিশ্ববিদ্যালয়ের জেন্ডার স্টাডিজের ছাত্রী",
+                    p12Cap: "গ্রুপ ফটো জেন্ডার স্টাডিজ শিক্ষার্থী-ঢাকা বিশ্ববিদ্যালয়",
+
+                    // Contact Us Section Language in Bangla
+                    contactHeading: "যোগাযোগ করুন",
+                    contactIntro: "আমরা বাংলাদেশে সুশীল সমাজের প্রতিনিধি, গণমাধ্যম এবং একাডেমিক প্রতিষ্ঠানের সাথে অনুসন্ধান, সহযোগিতার সুযোগ এবং সংলাপে স্বাগত জানাই।",
+                    contactDetails: "অফিসের বিস্তারিত তথ্য",
+                    contactOffice: "বাহা'ই পাবলিক অ্যাফেয়ার্স অফিস, বাংলাদেশ",
+                    contactAddress: "জাতীয় বাহা'ই কেন্দ্র, ৭ নবরতন কলোনি, সার্কিট হাউস রোড, শান্তিনগর, ঢাকা, বাংলাদেশ",
+                    contactCell: "মোবাইল নম্বর : ০০০২০-০০০২০৭",
+                    contactEmailLbl: "ইমেইল:",
+                    contactHoursLbl: "অফিসের সময়সূচী:",
+                    contactHoursVal: "শনিবার – বৃহস্পতিবার, সকাল ১১:০০ – দুপুর ৩:০০",
+                    labelName: "পূর্ণ নাম",
+                    labelEmail: "ইমেইল ঠিকানা",
+                    labelSubject: "বিষয়",
+                    labelMessage: "বার্তা",
+                    btnSubmit: "বার্তা পাঠান",
+                    phName: "আপনার পূর্ণ নাম",
+                    phEmail: "your.email@example.com",
+                    phSubject: "অনুসন্ধানের বিষয়",
+                    phMessage: "এখানে আপনার বার্তা লিখুন..."
+                }
+            };
+
+            const langEnBtn = document.getElementById("lang-en");
+            const langBnBtn = document.getElementById("lang-bn");
+            const navMenu = document.querySelector("nav");
+
+            // Element references
+            const navHome = document.getElementById("nav-home");
+            const navHistory = document.getElementById("nav-history");
+            const navApproach = document.getElementById("nav-approach");
+            const navNews = document.getElementById("nav-news");
+            const navLibrary = document.getElementById("nav-library");
+            const navFocus = document.getElementById("nav-focus");
+            const navYouth = document.getElementById("nav-youth");
+            const navWomen = document.getElementById("nav-women");
+            const navChildren = document.getElementById("nav-children");
+            const navVideo = document.getElementById("nav-video");
+            const navPhoto = document.getElementById("nav-photo");
+            const navLang = document.getElementById("nav-lang");
+            const navContact = document.getElementById("nav-contact");
+
+            const homeHeading = document.getElementById("home-heading");
+            const homeSubheading = document.getElementById("home-subheading");
+            const v1Cap = document.getElementById("v1-cap");
+            const v2Cap = document.getElementById("v2-cap");
+            const homePara1 = document.getElementById("home-para1");
+            const homePara2 = document.getElementById("home-para2");
+
+            const historyHeading = document.getElementById("history-heading");
+            const historyText = document.getElementById("history-text");
+
+            const approachHeading = document.getElementById("approach-heading");
+            const approachText = document.getElementById("approach-text");
+
+            const youthTitle = document.getElementById("youth-title");
+            const youthBody = document.getElementById("youth-body");
+
+            const womenTitle = document.getElementById("women-title");
+            const womenBody = document.getElementById("women-body");
+
+            const childrenTitle = document.getElementById("children-title");
+            const childrenBody = document.getElementById("children-body");
+
+            // News references
+            const newsSecHeading = document.getElementById("news-sec-heading");
+            const n1Title = document.getElementById("n1-title");
+            const n1Date = document.getElementById("n1-date");
+            const n1Desc = document.getElementById("n1-desc");
+
+            const n2Title = document.getElementById("n2-title");
+            const n2Date = document.getElementById("n2-date");
+            const n2Desc = document.getElementById("n2-desc");
+
+            const n3Title = document.getElementById("n3-title");
+            const n3Date = document.getElementById("n3-date");
+            const n3Desc = document.getElementById("n3-desc");
+
+            const n4Title = document.getElementById("n4-title");
+            const n4Date = document.getElementById("n4-date");
+            const n4Desc = document.getElementById("n4-desc");
+
+            const n5Title = document.getElementById("n5-title");
+            const n5Date = document.getElementById("n5-date");
+            const n5Desc = document.getElementById("n5-desc");
+
+            const n6Title = document.getElementById("n6-title");
+            const n6Date = document.getElementById("n6-date");
+            const n6Desc = document.getElementById("n6-desc");
+
+            // Library Section Heading reference
+            const librarySecHeading = document.getElementById("library-sec-heading");
+
+            // Photo Gallery References
+            const photoSecHeading = document.querySelector("#photo .section-header h2");
+            const p1Cap = document.getElementById("p1-cap");
+            const p2Cap = document.getElementById("p2-cap");
+            const p3Cap = document.getElementById("p3-cap");
+            const p4Cap = document.getElementById("p4-cap");
+            const p5Cap = document.getElementById("p5-cap");
+            const p6Cap = document.getElementById("p6-cap");
+            const p7Cap = document.getElementById("p7-cap");
+            const p8Cap = document.getElementById("p8-cap");
+            const p9Cap = document.getElementById("p9-cap");
+            const p10Cap = document.getElementById("p10-cap");
+            const p11Cap = document.getElementById("p11-cap");
+            const p12Cap = document.getElementById("p12-cap");
+
+            // Contact references
+            const contactHomeHeading = document.getElementById("contact-home-heading");
+            const contactHomeIntro = document.getElementById("contact-home-intro");
+            const contactDetailsHeading = document.getElementById("contact-details-heading");
+            const contactOfficeTitle = document.getElementById("contact-office-title");
+            const contactAddress = document.getElementById("contact-address");
+            const contactCell = document.getElementById("contact-cell");
+            const contactEmailLabel = document.getElementById("contact-email-label");
+            const contactHoursLabel = document.getElementById("contact-hours-label");
+            const contactHoursVal = document.getElementById("contact-hours-val");
+
+            const labelHomeName = document.getElementById("label-home-name");
+            const labelHomeEmail = document.getElementById("label-home-email");
+            const labelHomeSubject = document.getElementById("label-home-subject");
+            const labelHomeMessage = document.getElementById("label-home-message");
+            const btnHomeSubmit = document.getElementById("btn-home-submit");
+
+            const inputHomeName = document.getElementById("home-name");
+            const inputHomeEmail = document.getElementById("home-email");
+            const inputHomeSubject = document.getElementById("home-subject");
+            const inputHomeMessage = document.getElementById("home-message");
+
+            const contactHeading = document.getElementById("contact-heading");
+            const contactIntro = document.getElementById("contact-intro");
+            const contactSecDetails = document.getElementById("contact-sec-details");
+            const contactSecOffice = document.getElementById("contact-sec-office");
+            const contactSecAddress = document.getElementById("contact-sec-address");
+            const contactSecCell = document.getElementById("contact-sec-cell");
+            const contactSecEmailLbl = document.getElementById("contact-sec-email-lbl");
+            const contactSecHoursLbl = document.getElementById("contact-sec-hours-lbl");
+            const contactSecHoursVal = document.getElementById("contact-sec-hours-val");
+
+            const labelName = document.getElementById("label-name");
+            const labelEmail = document.getElementById("label-email");
+            const labelSubject = document.getElementById("label-subject");
+            const labelMessage = document.getElementById("label-message");
+            const btnSubmit = document.getElementById("btn-submit");
+
+            const inputName = document.getElementById("name");
+            const inputEmail = document.getElementById("email");
+            const inputSubject = document.getElementById("subject");
+            const inputMessage = document.getElementById("message");
+
+            // Language switch function
+            function setLanguage(lang) {
+                const data = translations[lang];
+
+                // Update Menu Bar
+                if (navHome) navHome.textContent = data.navHome;
+                if (navHistory) navHistory.textContent = data.navHistory;
+                if (navApproach) navApproach.textContent = data.navApproach;
+                if (navNews) navNews.textContent = data.navNews;
+                if (navLibrary) navLibrary.textContent = data.navLibrary;
+                if (navFocus) navFocus.textContent = data.navFocus;
+                if (navYouth) navYouth.textContent = data.navYouth;
+                if (navWomen) navWomen.textContent = data.navWomen;
+                if (navChildren) navChildren.textContent = data.navChildren;
+                if (navVideo) navVideo.textContent = data.navVideo;
+                if (navPhoto) navPhoto.textContent = data.navPhoto;
+                if (navLang) navLang.textContent = data.navLang;
+                if (navContact) navContact.textContent = data.navContact;
+
+                // Update Home Section (including Video Captions)
+                if (homeHeading) homeHeading.textContent = data.heading;
+                if (homeSubheading) homeSubheading.textContent = data.subheading;
+                if (v1Cap) v1Cap.textContent = data.v1Cap;
+                if (v2Cap) v2Cap.textContent = data.v2Cap;
+                if (homePara1) homePara1.textContent = data.para1;
+                if (homePara2) homePara2.textContent = data.para2;
+
+                // Update History Section
+                if (historyHeading) historyHeading.textContent = data.historyHeading;
+                if (historyText) historyText.textContent = data.historyText;
+
+                // Update Approach Section
+                if (approachHeading) approachHeading.textContent = data.approachHeading;
+                if (approachText) approachText.textContent = data.approachText;
+
+                // Update Focus Areas Articles
+                if (youthTitle) youthTitle.textContent = data.youthTitle;
+                if (youthBody) youthBody.innerHTML = data.youthBody;
+
+                if (womenTitle) womenTitle.textContent = data.womenTitle;
+                if (womenBody) womenBody.innerHTML = data.womenBody;
+
+                if (childrenTitle) childrenTitle.textContent = data.childrenTitle;
+                if (childrenBody) childrenBody.innerHTML = data.childrenBody;
+
+                // Update News Section
+                if (newsSecHeading) newsSecHeading.textContent = data.newsSecHeading;
+                if (n1Title) n1Title.textContent = data.n1Title;
+                if (n1Date) n1Date.textContent = data.n1Date;
+                if (n1Desc) n1Desc.textContent = data.n1Desc;
+
+                if (n2Title) n2Title.textContent = data.n2Title;
+                if (n2Date) n2Date.textContent = data.n2Date;
+                if (n2Desc) n2Desc.textContent = data.n2Desc;
+
+                if (n3Title) n3Title.textContent = data.n3Title;
+                if (n3Date) n3Date.textContent = data.n3Date;
+                if (n3Desc) n3Desc.textContent = data.n3Desc;
+
+                if (n4Title) n4Title.textContent = data.n4Title;
+                if (n4Date) n4Date.textContent = data.n4Date;
+                if (n4Desc) n4Desc.textContent = data.n4Desc;
+
+                if (n5Title) n5Title.textContent = data.n5Title;
+                if (n5Date) n5Date.textContent = data.n5Date;
+                if (n5Desc) n5Desc.textContent = data.n5Desc;
+
+                if (n6Title) n6Title.textContent = data.n6Title;
+                if (n6Date) n6Date.textContent = data.n6Date;
+                if (n6Desc) n6Desc.textContent = data.n6Desc;
+
+                // Update Library Section Heading
+                if (librarySecHeading) librarySecHeading.textContent = data.librarySecHeading;
+
+                // Update Photo Gallery Captions
+                if (photoSecHeading) photoSecHeading.textContent = data.photoSecHeading;
+                if (p1Cap) p1Cap.textContent = data.p1Cap;
+                if (p2Cap) p2Cap.textContent = data.p2Cap;
+                if (p3Cap) p3Cap.textContent = data.p3Cap;
+                if (p4Cap) p4Cap.textContent = data.p4Cap;
+                if (p5Cap) p5Cap.textContent = data.p5Cap;
+                if (p6Cap) p6Cap.textContent = data.p6Cap;
+                if (p7Cap) p7Cap.textContent = data.p7Cap;
+                if (p8Cap) p8Cap.textContent = data.p8Cap;
+                if (p9Cap) p9Cap.textContent = data.p9Cap;
+                if (p10Cap) p10Cap.textContent = data.p10Cap;
+                if (p11Cap) p11Cap.textContent = data.p11Cap;
+                if (p12Cap) p12Cap.textContent = data.p12Cap;
+
+                // Update Contact Us Sections
+                if (contactHomeHeading) contactHomeHeading.textContent = data.contactHeading;
+                if (contactHomeIntro) contactHomeIntro.textContent = data.contactIntro;
+                if (contactDetailsHeading) contactDetailsHeading.textContent = data.contactDetails;
+                if (contactOfficeTitle) contactOfficeTitle.textContent = data.contactOffice;
+                if (contactAddress) contactAddress.textContent = data.contactAddress;
+                if (contactCell) contactCell.textContent = data.contactCell;
+                if (contactEmailLabel) contactEmailLabel.textContent = data.contactEmailLbl;
+                if (contactHoursLabel) contactHoursLabel.textContent = data.contactHoursLbl;
+                if (contactHoursVal) contactHoursVal.textContent = data.contactHoursVal;
+
+                if (labelHomeName) labelHomeName.textContent = data.labelName;
+                if (labelHomeEmail) labelHomeEmail.textContent = data.labelEmail;
+                if (labelHomeSubject) labelHomeSubject.textContent = data.labelSubject;
+                if (labelHomeMessage) labelHomeMessage.textContent = data.labelMessage;
+                if (btnHomeSubmit) btnHomeSubmit.textContent = data.btnSubmit;
+
+                if (inputHomeName) inputHomeName.placeholder = data.phName;
+                if (inputHomeEmail) inputHomeEmail.placeholder = data.phEmail;
+                if (inputHomeSubject) inputHomeSubject.placeholder = data.phSubject;
+                if (inputHomeMessage) inputHomeMessage.placeholder = data.phMessage;
+
+                if (contactHeading) contactHeading.textContent = data.contactHeading;
+                if (contactIntro) contactIntro.textContent = data.contactIntro;
+                if (contactSecDetails) contactSecDetails.textContent = data.contactDetails;
+                if (contactSecOffice) contactSecOffice.textContent = data.contactOffice;
+                if (contactSecAddress) contactSecAddress.textContent = data.contactAddress;
+                if (contactSecCell) contactSecCell.textContent = data.contactCell;
+                if (contactSecEmailLbl) contactSecEmailLbl.textContent = data.contactEmailLbl;
+                if (contactSecHoursLbl) contactSecHoursLbl.textContent = data.contactHoursLbl;
+                if (contactSecHoursVal) contactSecHoursVal.textContent = data.contactHoursVal;
+
+                if (labelName) labelName.textContent = data.labelName;
+                if (labelEmail) labelEmail.textContent = data.labelEmail;
+                if (labelSubject) labelSubject.textContent = data.labelSubject;
+                if (labelMessage) labelMessage.textContent = data.labelMessage;
+                if (btnSubmit) btnSubmit.textContent = data.btnSubmit;
+
+                if (inputName) inputName.placeholder = data.phName;
+                if (inputEmail) inputEmail.placeholder = data.phEmail;
+                if (inputSubject) inputSubject.placeholder = data.phSubject;
+                if (inputMessage) inputMessage.placeholder = data.phMessage;
+
+                // Close mobile menu after selecting language
+                if (navMenu && navMenu.classList.contains("mobile-active")) {
+                    navMenu.classList.remove("mobile-active");
+                }
+            }
+
+            if (langEnBtn) {
+                langEnBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    setLanguage("en");
+                });
+            }
+
+            if (langBnBtn) {
+                langBnBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    setLanguage("bn");
+                });
+            }
+
+            // 📱 Mobile Navigation Toggle
+            const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener("click", function () {
+                    navMenu.classList.toggle("mobile-active");
+                });
+            }
+
+            // 📱 Mobile Sub-dropdown Click Handler Logic
+            const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener("click", function (e) {
+                    if (window.innerWidth <= 950) {
+                        e.preventDefault();
+                        const parentLi = this.closest("li.dropdown");
+                        if (parentLi) {
+                            parentLi.classList.toggle("mobile-expanded");
+                        }
+                    }
+                });
+            });
+
+            // ১. Navigation Tab Switching
+            const buttons = document.querySelectorAll(".nav-btn:not(.dropdown-toggle)");
+            const sections = document.querySelectorAll(".page-section");
+
+            function showSection(targetId) {
+                sections.forEach(section => {
+                    if ("#" + section.id === targetId) {
+                        section.classList.add("active");
+                    } else {
+                        section.classList.remove("active");
+                    }
+                });
+                
+                // Close mobile menu when a navigation item is clicked
+                if (navMenu && navMenu.classList.contains("mobile-active")) {
+                    navMenu.classList.remove("mobile-active");
+                }
+
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+
+            buttons.forEach(btn => {
+                btn.addEventListener("click", function (e) {
+                    const targetId = this.getAttribute("href");
+                    if (targetId && targetId.startsWith("#")) {
+                        e.preventDefault();
+                        showSection(targetId);
+                        window.location.hash = targetId;
+                    }
+                });
+            });
+
+            const currentHash = window.location.hash || "#home";
+            showSection(currentHash);
+
+            // ২. 3-Second Automatic Image Slideshow Logic
+            const slides = document.querySelectorAll("#home-slideshow .slide-img");
+            let currentSlideIndex = 0;
+
+            if (slides.length > 0) {
+                setInterval(function () {
+                    slides[currentSlideIndex].classList.remove("active-slide");
+                    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                    slides[currentSlideIndex].classList.add("active-slide");
+                }, 3000); // 3 Seconds
+            }
+
+            // ৩. Photo Gallery Lightbox Popup Logic
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const lightboxCaption = document.getElementById("lightbox-caption");
+            const closeBtn = document.getElementsByClassName("lightbox-close")[0];
+            const galleryImages = document.querySelectorAll(".gallery-card img");
+
+            galleryImages.forEach(img => {
+                img.addEventListener("click", function () {
+                    lightbox.style.display = "block";
+                    lightboxImg.src = this.src;
+                    
+                    const captionText = this.nextElementSibling ? this.nextElementSibling.innerText : this.alt;
+                    lightboxCaption.innerText = captionText;
+                });
+            });
+
+            if (closeBtn) {
+                closeBtn.addEventListener("click", function () {
+                    lightbox.style.display = "none";
+                });
+            }
+
+            lightbox.addEventListener("click", function (e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = "none";
+                }
+            });
+
+            // ৪. PDF Modal Viewer Logic
+            const pdfModal = document.getElementById("pdf-modal");
+            const pdfIframe = document.getElementById("pdf-modal-iframe");
+            const pdfTitle = document.getElementById("pdf-modal-title");
+            const pdfDownloadBtn = document.getElementById("pdf-modal-download");
+            const pdfCloseBtn = document.querySelector(".pdf-modal-close");
+            
+            // Library Links (With Download Button)
+            const libraryLinks = document.querySelectorAll(".library-numbered-list .lib-link");
+            libraryLinks.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const pdfUrl = this.getAttribute("href");
+                    const docTitle = this.textContent.trim();
+
+                    pdfIframe.src = pdfUrl + "#toolbar=0&navpanes=0";
+                    pdfTitle.textContent = docTitle;
+                    pdfDownloadBtn.href = pdfUrl;
+                    pdfDownloadBtn.setAttribute("download", docTitle + ".pdf");
+                    pdfDownloadBtn.style.display = "inline-flex"; // Show download for Library
+                    
+                    pdfModal.style.display = "block";
+                });
+            });
+
+            // News Links (Strict Read-Only Mode - No Download Option)
+            const newsReadBtns = document.querySelectorAll(".news-read-btn");
+            newsReadBtns.forEach(btn => {
+                btn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const pdfUrl = this.getAttribute("href");
+                    const card = this.closest(".news-card");
+                    const newsTitle = card ? card.querySelector("h3").textContent.trim() : "News Document";
+
+                    pdfIframe.src = pdfUrl + "#toolbar=0&navpanes=0";
+                    pdfTitle.textContent = newsTitle;
+                    pdfDownloadBtn.style.display = "none"; // Hide download button completely for News
+                    
+                    pdfModal.style.display = "block";
+                });
+            });
+
+            if (pdfCloseBtn) {
+                pdfCloseBtn.addEventListener("click", function () {
+                    pdfModal.style.display = "none";
+                    pdfIframe.src = "";
+                });
+            }
+
+            pdfModal.addEventListener("click", function (e) {
+                if (e.target === pdfModal) {
+                    pdfModal.style.display = "none";
+                    pdfIframe.src = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
